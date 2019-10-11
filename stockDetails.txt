@@ -1,0 +1,15 @@
+Stock Details
+
+[{
+	"name": "Tcs",
+	"noOfShare": 200,
+	"sharePrice": 20
+}, {
+	"name": "Wipro",
+	"noOfShare": 300,
+	"sharePrice": 20
+}, {
+	"name": "Bridgelabz",
+	"noOfShare": 400,
+	"sharePrice": 15
+}]
