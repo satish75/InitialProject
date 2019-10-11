@@ -1,0 +1,13 @@
+{
+	"Rice": [{
+			"name": "Basmati",
+			"price": 222,
+			"weight": 24
+		},
+		{
+			"name": "Simple",
+			"price": 442,
+			"weight": 12
+		}
+	]
+}

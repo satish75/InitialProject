@@ -1,0 +1,35 @@
+{
+	"Rice": [{
+			"name": "Basmati",
+			"price": 222,
+			"weight": 24
+		},
+		{
+			"name": "Simple",
+			"price": 442,
+			"weight": 12
+		}
+	],
+	"Wheats": [{
+			"name": "Good",
+			"price": 442,
+			"weight": 22
+		},
+		{
+			"name": "Very Good",
+			"price": 500,
+			"weight": 30
+		}
+	],
+	"Pulses": [{
+			"name": "Nice",
+			"price": 200,
+			"weight": 10
+		},
+		{
+			"name": "Excelent",
+			"price": 240,
+			"weight": 40
+		}
+	]
+}
