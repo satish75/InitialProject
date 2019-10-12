@@ -163,7 +163,7 @@ namespace ObjectOriented.InventoryManagement
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception Occurs");
+                Console.WriteLine("Exception Occurs : "+e);
             }
         }
     }

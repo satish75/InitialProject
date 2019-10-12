@@ -9,6 +9,7 @@ namespace ObjectOriented.Commercialdata
 
         public string accountHolderName;
         public double totalAmountAccountHolder;
+        public int noOfShareBuyUser = 0;
         public void UseGetInput()
         {
             Console.WriteLine("Enter Account Holder UserName");
