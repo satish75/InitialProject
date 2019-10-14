@@ -53,7 +53,7 @@ namespace ObjectOriented.StockReport
             }
             catch (InvalidCastException i)
             {
-                Console.WriteLine("Please Enter Valide Input "+i);
+                Console.WriteLine("Please Enter Valide Input " + i);
             }
             catch (Exception e)
             {

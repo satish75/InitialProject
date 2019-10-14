@@ -31,16 +31,6 @@ namespace ObjectOriented.Commercialdata
         double ValueOf();
 
         /// <summary>
-        /// declaration of buy share method.
-        /// </summary>
-        void Buy();
-
-        /// <summary>
-        /// declaration of buy share method.
-        /// </summary>
-        void Sell();
-
-        /// <summary>
         /// declaration of Sell Method
         /// </summary>
         void Save();
@@ -51,10 +41,23 @@ namespace ObjectOriented.Commercialdata
         void PrintReport();
     }
 
+    public interface IStockTarnsaction
+    {
+        /// <summary>
+        /// declaration of buy share method.
+        /// </summary>
+        void Buy();
+
+        /// <summary>
+        /// declaration of buy share method.
+        /// </summary>
+        void Sell();
+    }
+
     /// <summary>
     /// This is Stock class which implements Stock Account Interface.
     /// </summary>
-    public class StockAccount : IStockAccountInterface
+    public class StockAccount : IStockAccountInterface, IStockTarnsaction
     {
         /// <summary>
         /// This method create the account of multiple users.
@@ -102,7 +105,59 @@ namespace ObjectOriented.Commercialdata
         /// <returns>it return total share</returns>
        public double ValueOf()
         {
-            return 0;
+            ////this line take the path of user details file.
+            string path = "C:\\Users\\bridgeit\\Desktop\\Satya\\userDetail.json";
+
+            //// return value
+            double availableShare = 0.0;
+            ////here read all text from file and stored into json string.
+            string json = File.ReadAllText(path);
+
+            ////stream reader read the file which path we provided.
+            StreamReader streamReader = new StreamReader(path);
+
+            ////this line read start to end text from file.
+            string readString = streamReader.ReadToEnd();
+            streamReader.Close();
+
+            ////it create list of user object from given string.
+            List<UserDetails> userList = JsonConvert.DeserializeObject<List<UserDetails>>(readString);
+
+            ////here user must provide the user name to check account.
+            Console.WriteLine("Enter Your UserName");
+            string accountHolderName = Console.ReadLine();
+
+            int size = userList.Count();
+            int count = 1;
+            ////this loop take the one by one object from list of user object.
+            foreach (UserDetails objStock in userList)
+            {
+                ////this string retrive the name of user.
+                string newUserUpdate = objStock.accountHolderName;
+                count++;
+
+                ////if condition check the user is available or not.
+                if (newUserUpdate.Equals(accountHolderName))
+                {
+                    availableShare = objStock.noOfShareBuyUser;
+                    break;
+                }
+
+                if (count > size)
+                {
+                    Console.WriteLine("Invalide User Name");
+                    break;
+                }
+            }
+
+            if (availableShare != 0)
+            {
+                return availableShare;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -150,7 +205,8 @@ namespace ObjectOriented.Commercialdata
                     Console.WriteLine("**************************************************************************************");
                     break;
                 }
-                if(count > size)
+
+                if (count > size)
                 {
                     Console.WriteLine("Invalide User Name");
                     break;
@@ -195,13 +251,10 @@ namespace ObjectOriented.Commercialdata
                 string readString = streamReader.ReadToEnd();
                 streamReader.Close();
 
-
                 ////this variable use to take name share .
                 string userName = string.Empty;
                 Console.WriteLine("Enter Your UserName");
                 string accountHolderName = Console.ReadLine();
-
-
 
                 ////it create list of user object from given string.
                 List<UserDetails> userList = JsonConvert.DeserializeObject<List<UserDetails>>(readString);
@@ -223,14 +276,13 @@ namespace ObjectOriented.Commercialdata
                         GetDetails();
                         break;
                     }
+
                     if (count > size)
                     {
                         Console.WriteLine("Invalide User Name");
                         break;
                     }
                 }
-
-
 
                 ////this method display Stock Report.
                 ////here user enter whichever stock he want to buy.
@@ -325,14 +377,157 @@ namespace ObjectOriented.Commercialdata
         /// this method sell the share by user.
         /// </summary>
         public void Sell()
-         {
-             throw new NotImplementedException();
-         }
+         {       
+            ////this variable use to take share price of campany.
+            double sharePrice = 0.0;
+
+            ////this variable use to check user is valide or not to buy share .
+            double newAmountOfUser = 0.0;
+
+            ////this variable use to check total amount of user.
+            double totalAmountOfUser = 0;
+
+            ////this variable use to take name of campany.
+            string name = string.Empty;
+            try
+            {
+                ////this line take the path of user details file.
+                string path = "C:\\Users\\bridgeit\\Desktop\\Satya\\userDetail.json";
+
+                ////here read all text from file and stored into json string.
+                string json = File.ReadAllText(path);
+
+                ////stream reader read the file which path we provided.
+                StreamReader streamReader = new StreamReader(path);
+
+                ////this line read start to end text from file.
+                string readString = streamReader.ReadToEnd();
+                streamReader.Close();
+
+                ////this variable use to take name share .
+                string userName = string.Empty;
+                Console.WriteLine("Enter Your UserName");
+                string accountHolderName = Console.ReadLine();
+                bool isValide = false;
+
+                ////it create list of user object from given string.
+                List<UserDetails> userList = JsonConvert.DeserializeObject<List<UserDetails>>(readString);
+
+                ////here user must provide the user name to check account.
+
+                int size = userList.Count();
+                int count = 1;
+                ////this loop take the one by one object from list of user object.
+                foreach (UserDetails objStock in userList)
+                {
+                    ////this string retrive the name of user.
+                    string newUserUpdate = objStock.accountHolderName;
+                    count++;
+
+                    ////if condition check the user is available or not.
+                    if (newUserUpdate.Equals(accountHolderName))
+                    {
+                        //// GetDetails();
+                        isValide = true;
+                        break;
+                    }
+
+                    if (count > size)
+                    {
+                        Console.WriteLine("Invalide User Name");
+                        break;
+                    }
+                }
+
+                 if (isValide)
+                {
+                    ////this method display Stock Report.
+                    ////here user enter whichever stock he want to buy.
+                    Console.WriteLine("Enter Stock Name To Sell Share");
+                    string stockName = Console.ReadLine();
+
+                    ////here user enter how many share he want to buy
+                    Console.WriteLine("How Many Share You Want To Sell ");
+                    int numberOfShareSell = Convert.ToInt32(Console.ReadLine());
+
+                    ////This code get the stock details to update stock file records.
+                    string readPath = "C:\\Users\\bridgeit\\Desktop\\Satya\\stockDetails.json";
+                    var json2 = File.ReadAllText(readPath);
+                    var jObject = JObject.Parse(json2);
+
+                    //// read the file here.
+                    string jsonPath = File.ReadAllText(readPath);
+
+                    ////it dynamically create object.
+                    dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(jsonPath);
+
+                    ////this loop use to take share price of particular stock.
+                    int i;
+                    for (i = 0; i < 5; i++)
+                    {
+                        string retriveName = jsonObj["stockReport"][i]["stockName"];
+
+                        ////this if condition check stock name is available in file or not.
+                        if (retriveName.Equals(stockName))
+                        {
+                            sharePrice = jsonObj["stockReport"][i]["sharePrice"];
+                            //// availableShareOfStock = jsonObj["stockReport"][i]["noOfShare"];
+                            ////  name = jsonObj["stockReport"][i]["stockName"];
+                            break;
+                        }
+                    }
+
+                    ////this code use to update where user want to buy the share with specified file path.
+                    StreamReader streamReaderUser = new StreamReader("C:\\Users\\bridgeit\\Desktop\\Satya\\userDetail.json");
+                    string readUserFile = streamReaderUser.ReadToEnd();
+                    streamReaderUser.Close();
+
+                    ////this line create list of object.
+                    List<UserDetails> userList2 = JsonConvert.DeserializeObject<List<UserDetails>>(readUserFile);
+                    int totalShareUser = 0;
+                    int size2 = userList.Count();
+                    int count2 = 1;
+                    ////this use to check the particular user for update.
+                    foreach (UserDetails objUser in userList)
+                    {
+                        ////userName stored the current user name.
+                        userName = objUser.accountHolderName;
+                        count2++;
+                        ////it check user Name is Valide Or not.
+                        if (userName.Equals(accountHolderName))
+                        {
+                            totalAmountOfUser = objUser.totalAmountAccountHolder;
+                            totalShareUser = objUser.noOfShareBuyUser;
+                            ////   previousShare = objUser.noOfShareBuyUser + numberOfShareBuy;
+                            newAmountOfUser = numberOfShareSell * sharePrice;
+
+                            ////if available balance of user is greater than buying share then true this condition.
+                            if (totalShareUser > 0)
+                            {
+                                totalAmountOfUser = totalAmountOfUser + newAmountOfUser;
+                                totalShareUser = totalShareUser - numberOfShareSell;
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("You Dont Have Sufficient Shares");
+                            }
+                        }
+                    }
+                    ////this method update user Account
+                    this.Save(userName, totalAmountOfUser, totalShareUser);
+                }  
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Please Enter Valide Input " + e);
+            }
+        }
 
         /// <summary>
         /// this print method show all reports of stock report.
         /// </summary>
-         public void PrintReport()
+        public void PrintReport()
          {
             ////this method print stock report.
             GetDetails();

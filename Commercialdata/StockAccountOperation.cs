@@ -27,7 +27,7 @@ namespace ObjectOriented.Commercialdata
                 ////here print list of operation which is goining to perform
                 Console.WriteLine("**********************************");
                 Console.WriteLine("1. Create Account \n" + "2. Print Report\n" + "3. Buy Shares\n"
-                    + "4. Show My Account \n");
+                    + "4. Show My Account \n" + "5. No of Share \n" + "6. Sell\n");
                 Console.WriteLine("*********************************** ");
 
                 ////take choice from user
@@ -46,6 +46,12 @@ namespace ObjectOriented.Commercialdata
                         break;
                     case 4:
                         stockAccount.ShowMyAccount();
+                        break;
+                    case 5:
+                       Console.WriteLine(stockAccount.ValueOf());
+                        break;
+                    case 6:
+                        stockAccount.Sell();
                         break;
                     default:
                         Console.WriteLine("Please Enter Valide Number");

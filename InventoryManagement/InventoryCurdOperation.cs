@@ -48,6 +48,11 @@ namespace ObjectOriented.InventoryManagement
 
                 Console.WriteLine("\nDo You want To Continue the Press 'Y' Or 'N' ");
                 again = Console.ReadLine()[0];
+                if (again == ' ')
+                {
+                    Console.WriteLine("Please Enter Valide Input");
+                    break;
+                }
             }
             while (again == 'Y' || again == 'y');
         }

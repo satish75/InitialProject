@@ -33,15 +33,28 @@ namespace ObjectOriented.Commercialdata
         /// <summary>
         /// this method take all user detail which required to create account.
         /// </summary>
+        
+            public string AccountHolderName
+        {
+            get
+            {
+                return accountHolderName;
+            }
+            set
+            {
+                accountHolderName = value;
+            }
+        }
+
         public void UseGetInput()
         {
             ////here user enter user name
-            Console.WriteLine("Enter Account Holder UserName");
-             this.accountHolderName = Console.ReadLine();
+             Console.WriteLine("Enter Account Holder UserName");
+             accountHolderName = Console.ReadLine();
 
             ////here user initial balance enter by user
             Console.WriteLine("How Many Doller Do You Have (Total Amount)");
-             this.totalAmountAccountHolder = Convert.ToInt32(Console.ReadLine());
+             totalAmountAccountHolder = Convert.ToInt32(Console.ReadLine());
         }
     }
 }
