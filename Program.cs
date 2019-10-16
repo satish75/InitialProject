@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace DesignPattern
 {
@@ -6,26 +7,61 @@ namespace DesignPattern
     {
        public static void Main(string[] args)
         {
-            Developer developer = new Developer();
-            developer.employeeId = 101;
-            developer.employeeName = "Kiran";
-            developer.employeeSalary = 25000;
 
-            Developer developerCloneObject = (Developer)developer.Clone();
-            developerCloneObject.employeeName = "Satya";
-            developerCloneObject.getDetails();
+          
+              CarName carName = new CarName();
+              carName.carName = "Farary";
+              carName.modelNumber = "488"; 
 
-            ////tester details
-            ///
-        /*    Tester tester = new Tester();
-            tester.employeeId = 105;
-            tester.employeeName = "Ramesh";
-            tester.employeeSalary = 30000;
-            Tester testerCloneObject = (Tester)tester.Clone();
-            testerCloneObject.employeeSalary = 50000;
-            testerCloneObject.getDetails();
+              CarColor carColor = new CarColor();
+              carColor.color = "Red";
 
-            */
+              CarEngine carEngineObject = new CarEngine();
+              carEngineObject.carEngine = "Ghibli";
+
+            carName.CarNameWithModel();
+            carColor.getColor();
+            carEngineObject.getEngine();
+            FacadeCar facadeCar = new FacadeCar();
+              facadeCar.CompleteCarMade();
+
+
+
+
+           /*Facade Design Pattern
+            * 
+            *
+              ITarget target = new VenderAdapter();
+              List<string> list = target.getProducts();
+              Console.WriteLine("Available Product : \n");
+              foreach (string product in list)
+              {        
+                  Console.Write("  " + product);
+              }
+
+
+
+
+              /*  Developer developer = new Developer();
+                developer.employeeId = 101;
+                developer.employeeName = "Kiran";
+                developer.employeeSalary = 25000;
+
+                Developer developerCloneObject = (Developer)developer.Clone();
+                developerCloneObject.employeeName = "Satya";
+                developerCloneObject.getDetails();
+
+                ////tester details
+                ///
+                Tester tester = new Tester();
+                tester.employeeId = 105;
+                tester.employeeName = "Ramesh";
+                tester.employeeSalary = 30000;
+                Tester testerCloneObject = (Tester)tester.Clone();
+                testerCloneObject.employeeSalary = 50000;
+                testerCloneObject.getDetails();
+
+                */
 
 
 
