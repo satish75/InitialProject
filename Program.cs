@@ -7,61 +7,64 @@ namespace DesignPattern
     {
        public static void Main(string[] args)
         {
-
-          
-              CarName carName = new CarName();
-              carName.carName = "Farary";
-              carName.modelNumber = "488"; 
-
-              CarColor carColor = new CarColor();
-              carColor.color = "Red";
-
-              CarEngine carEngineObject = new CarEngine();
-              carEngineObject.carEngine = "Ghibli";
-
-            carName.CarNameWithModel();
-            carColor.getColor();
-            carEngineObject.getEngine();
-            FacadeCar facadeCar = new FacadeCar();
-              facadeCar.CompleteCarMade();
+            Console.WriteLine("Enter Bank Balance ");
+            double balance = Convert.ToDouble(Console.ReadLine());
+            Customer.AvailableBalance = balance;
+            AtmProxy atmProxy = new AtmProxy();
+            Console.WriteLine("After Withdraw Your Available Amount : " + atmProxy.WithdrawCash());
 
 
 
 
-           /*Facade Design Pattern
-            * 
-            *
-              ITarget target = new VenderAdapter();
-              List<string> list = target.getProducts();
-              Console.WriteLine("Available Product : \n");
-              foreach (string product in list)
-              {        
-                  Console.Write("  " + product);
-              }
 
 
 
 
-              /*  Developer developer = new Developer();
-                developer.employeeId = 101;
-                developer.employeeName = "Kiran";
-                developer.employeeSalary = 25000;
 
-                Developer developerCloneObject = (Developer)developer.Clone();
-                developerCloneObject.employeeName = "Satya";
-                developerCloneObject.getDetails();
 
-                ////tester details
-                ///
-                Tester tester = new Tester();
-                tester.employeeId = 105;
-                tester.employeeName = "Ramesh";
-                tester.employeeSalary = 30000;
-                Tester testerCloneObject = (Tester)tester.Clone();
-                testerCloneObject.employeeSalary = 50000;
-                testerCloneObject.getDetails();
 
-                */
+            /*Facade apttern
+             * 
+               FacadeCar facadeCar = new FacadeCar();
+                 facadeCar.CompleteCarMade();
+
+
+
+
+              /*Facade Design Pattern
+               * 
+               *
+                 ITarget target = new VenderAdapter();
+                 List<string> list = target.getProducts();
+                 Console.WriteLine("Available Product : \n");
+                 foreach (string product in list)
+                 {        
+                     Console.Write("  " + product);
+                 }
+
+
+
+
+                 /*  Developer developer = new Developer();
+                   developer.employeeId = 101;
+                   developer.employeeName = "Kiran";
+                   developer.employeeSalary = 25000;
+
+                   Developer developerCloneObject = (Developer)developer.Clone();
+                   developerCloneObject.employeeName = "Satya";
+                   developerCloneObject.getDetails();
+
+                   ////tester details
+                   ///
+                   Tester tester = new Tester();
+                   tester.employeeId = 105;
+                   tester.employeeName = "Ramesh";
+                   tester.employeeSalary = 30000;
+                   Tester testerCloneObject = (Tester)tester.Clone();
+                   testerCloneObject.employeeSalary = 50000;
+                   testerCloneObject.getDetails();
+
+                   */
 
 
 

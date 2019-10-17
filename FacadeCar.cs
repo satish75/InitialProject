@@ -11,13 +11,21 @@ namespace DesignPattern
 
         public void CompleteCarMade()
         {
-            CarName name = new CarName();
-            name.CarNameWithModel();
-            CarColor color = new CarColor();
+            CarName carName = new CarName();
+            carName.carName = "Farary";
+            carName.modelNumber = "488";
+            carName.CarNameWithModel();
+
+
+            CarColor carColor = new CarColor();
+            carColor.color = "Red";
             CarEngine engine = new CarEngine();
-           
-            color.getColor();
-            engine.getEngine();
+            carColor.getColor();
+
+            CarEngine carEngineObject = new CarEngine();
+            carEngineObject.carEngine = "Ghibli";
+            carEngineObject.getEngine();
+
         }
     }
 
