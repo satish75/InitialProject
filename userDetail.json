@@ -1,10 +1,8 @@
 [
   {
-    "accountHolderName": "satya",
-    "totalAmountAccountHolder": 2000
-  },
-  {
-    "accountHolderName": "samir",
-    "totalAmountAccountHolder": 1500
+    "accountHolderName": "ganesh",
+    "totalAmountAccountHolder": 10.0,
+    "noOfShareBuyUser": 0,
+    "AccountHolderName": "ganesh"
   }
 ]

@@ -1,12 +1,7 @@
 [
   {
-    "nameOfShare": "jjj",
-    "numberOfShare": 7,
-    "sharePrice": 8.0
-  },
-  {
-    "nameOfShare": "5",
-    "numberOfShare": 8,
-    "sharePrice": 6.0
+    "nameOfShare": "tcs",
+    "numberOfShare": 200,
+    "sharePrice": 20.0
   }
 ]
