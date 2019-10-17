@@ -7,20 +7,19 @@ namespace DesignPattern
     {
        public static void Main(string[] args)
         {
+            HP hP = new HP { name="HP",price=20000,manufacturingYear=2015};    
+            ConcreateDecoratorHp c = new ConcreateDecoratorHp(hP);
+            c.GetDetails();
+
+
+            /*Proxy Pattern
+             * 
+             * 
             Console.WriteLine("Enter Bank Balance ");
             double balance = Convert.ToDouble(Console.ReadLine());
             Customer.AvailableBalance = balance;
             AtmProxy atmProxy = new AtmProxy();
             Console.WriteLine("After Withdraw Your Available Amount : " + atmProxy.WithdrawCash());
-
-
-
-
-
-
-
-
-
 
 
             /*Facade apttern
