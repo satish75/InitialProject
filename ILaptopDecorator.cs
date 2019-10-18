@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+//   Copyright © 2019 Company
+// </copyright>
+// <creator name="Satish Dodake"/>
+// ------------------------------------------------------------------------------------------------------
 
 namespace DesignPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     public class Decorator
     {
     }
