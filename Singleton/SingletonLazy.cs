@@ -18,7 +18,7 @@ namespace DesignPattern
         private SingletonLazy()
         {
             count++;
-            Console.WriteLine("count " + count);
+            Console.WriteLine("Number Of Object " + count);
         }
         public void Message(string message)
         {
