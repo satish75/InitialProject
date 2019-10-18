@@ -9,8 +9,33 @@ namespace DesignPattern
     {
        public static void Main(string[] args)
         {
+            /*
+             * Method Injection
+             * 
+            Permanent permanentMethod = new Permanent();
+            MethodClient methodClient = new MethodClient();
+            methodClient.MethodClientInjection(permanentMethod);
+
+            /*
+             * 
+             * 
+            Permanent permanentProperty = new Permanent();
+            PropertyClient propertyClient = new PropertyClient();
+            propertyClient.NewEmployee = permanentProperty;
+            propertyClient.PropertyInjection();
+
+            /*
+             * 
+             * Constructore Injection
+            Permanent objectPermanent = new Permanent();
+            ConstructorInjection constructorInjection = new ConstructorInjection(objectPermanent);
+            constructorInjection.employeeDetailsByConstructor();
+
+            /*
+             * 
+             * Data Annotation 
             ////step 1
-            EmployeeValidation employeeValidation = new EmployeeValidation();
+            EmployeeValidationNotation employeeValidation = new EmployeeValidationNotation();
             employeeValidation.EmployeeName = "satish";
             employeeValidation.Age=200;
             ////step 2
@@ -48,13 +73,15 @@ namespace DesignPattern
 
               /*Observer Pattern
                * 
+               * 
 
               HP hP = new HP { name="HP",price=20000,manufacturingYear=2015};    
               ConcreateDecoratorHp c = new ConcreateDecoratorHp(hP);
               c.GetDetails();
 
 
-              /*Proxy Pattern
+              /*
+               * Proxy Pattern
                * 
                * 
               Console.WriteLine("Enter Bank Balance ");
@@ -64,7 +91,8 @@ namespace DesignPattern
               Console.WriteLine("After Withdraw Your Available Amount : " + atmProxy.WithdrawCash());
 
 
-              /*Facade apttern
+              /*
+               * Facade apttern
                * 
                  FacadeCar facadeCar = new FacadeCar();
                    facadeCar.CompleteCarMade();
@@ -72,7 +100,8 @@ namespace DesignPattern
 
 
 
-                /*Facade Design Pattern
+                /*
+                 * Facade Design Pattern
                  * 
                  *
                    ITarget target = new VenderAdapter();
@@ -86,7 +115,9 @@ namespace DesignPattern
 
 
 
-                   /*  Developer developer = new Developer();
+
+                   /* 
+                    * Developer developer = new Developer();
                      developer.employeeId = 101;
                      developer.employeeName = "Kiran";
                      developer.employeeSalary = 25000;
@@ -95,8 +126,10 @@ namespace DesignPattern
                      developerCloneObject.employeeName = "Satya";
                      developerCloneObject.getDetails();
 
-                     ////tester details
-                     ///
+                     /*
+                      * 
+                      * tester details
+                     
                      Tester tester = new Tester();
                      tester.employeeId = 105;
                      tester.employeeName = "Ramesh";

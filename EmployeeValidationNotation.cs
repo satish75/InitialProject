@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DesignPattern
 {
-    public class EmployeeValidation
+    public class EmployeeValidationNotation
     {
        [Range (20,40,ErrorMessage ="Age Should Be Between 20 and 40")]
         public int age { get; set; }
