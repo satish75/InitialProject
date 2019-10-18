@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 namespace DesignPattern
 {
@@ -9,6 +10,35 @@ namespace DesignPattern
     {
        public static void Main(string[] args)
         {
+            
+             //// Reflection
+              
+            ReflectionCompany reflectionCompany = new ReflectionCompany();
+            reflectionCompany.companyName = "Google";
+            reflectionCompany.numberOfEmployee = 1000;
+            reflectionCompany.turnOver = 5000000;
+            reflectionCompany.companyEstablishYear = 1994;
+            reflectionCompany.ComapanyDetails();
+            Type typeOfClass = typeof(ReflectionCompany);
+            Console.WriteLine(" Class : " + typeOfClass.Name);
+            Console.WriteLine(" NameSpace : " + typeOfClass.Namespace);
+            PropertyInfo name = typeOfClass.GetProperty("companyName");
+            name.SetValue(reflectionCompany, "TCS");
+
+            PropertyInfo[] propertyInfo = typeOfClass.GetProperties();
+            foreach (PropertyInfo info in propertyInfo)
+            {
+                Console.WriteLine(" " + info.Name);
+            }
+            foreach (PropertyInfo info in propertyInfo)
+            {
+
+                Console.WriteLine(info.Name+" : " +info.GetValue(reflectionCompany));
+            }
+
+
+
+
             /*
              * Method Injection
              * 
