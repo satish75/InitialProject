@@ -42,11 +42,8 @@ namespace DesignPattern.Singleton
                         UtilitySingleton.SingletonType();
                         break;
                     case 2:
-                        
-                      
-                        ConcreateFactory concreateFactory = new ConcreateFactory();
-                        IComputer computer = concreateFactory.getUserDecidedConfiguration("PC");
-                        computer.getConfiguration();
+
+                        FactoryClient.ClientRequirement();
                         break;
                     default:
                         Console.WriteLine("Please Enter Valide Number");

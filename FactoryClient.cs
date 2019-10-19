@@ -1,26 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FactoryClient.cs" company="Bridgelabz">
+//   Copyright © 2019 Company
+// </copyright>
+// <creator name="Satish Dodake"/>
+// ------------------------------------------------------------------------------------------------------
 namespace DesignPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// this is client class
+    /// </summary>
     public class FactoryClient
     {
+        /// <summary>
+        /// this method used by client
+        /// </summary>
         public static void ClientRequirement()
         {
-            PC pC = new PC();
-            pC.getConfiguration("4Gb", "1Tb", "I3");
-            Laptop laptop = new Laptop();
-            laptop.getConfiguration("8Gb", "1Tb", "I5");
-            Server server = new Server();
-            server.getConfiguration("Pentiaum", "120Gb", "Dual");
-
             ConcreateFactory concreateFactory = new ConcreateFactory();
             Console.WriteLine("Available Product : PC\tLaptop\tServer ");
             Console.WriteLine("Which Product You Want ");
             string productName = Console.ReadLine();
-            IComputer computer = concreateFactory.getUserDecidedConfiguration(productName);
-            computer.getConfiguration("1Tb", "I3", "4gb"); ;
+            try
+            {
+                IComputer computer = concreateFactory.getUserDecidedConfiguration(productName);
+                if (computer == null)
+                {
+                    Console.WriteLine("Your Product Not Made in this Factory");
+                }  
+                computer.getConfiguration();
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine(e);
+            }          
         }
     }
 }

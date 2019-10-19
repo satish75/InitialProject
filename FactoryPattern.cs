@@ -51,7 +51,7 @@ namespace DesignPattern
                     return new Server();
                     break;
                 default:
-                    throw new Exception("Your Product Not Made in this Factory");
+                    return null;                             
             }
         }
     }
@@ -67,7 +67,7 @@ namespace DesignPattern
         /// <param name="ram">take RAM</param>
         /// <param name="harddisk">take HardDisk</param>
         /// <param name="processor">take Processor</param>
-        abstract void getConfiguration(string ram, string harddisk, string processor);
+        abstract void getConfiguration();
     }
 
     /// <summary>
@@ -78,17 +78,18 @@ namespace DesignPattern
         /// <summary>
         /// it hold Ram Of computer
         /// </summary>
-       public string ram;
+        public string ram = "4gb";
+
 
         /// <summary>
         /// it hold hardDisk Of computer
         /// </summary>
-        public string hardDisk;
+        public string hardDisk = "1Tb";
 
         /// <summary>
         /// it hold processor Of computer
         /// </summary>
-        public string processor;
+        public string processor = "I3";
 
         /// <summary>
         /// this is abstract method declaration
@@ -96,19 +97,10 @@ namespace DesignPattern
         /// <param name="ram">take ram</param>
         /// <param name="harddisk">take hardDisk</param>
         /// <param name="processor">take processor</param>
-        public void getConfiguration(string ram, string hardDisk, string processor)
-        {
-            //// set the ram to current object
-            this.ram = ram;
-
-            //// set hardDisk to Current Object
-            this.hardDisk = hardDisk;
-
-            //// set Processor to current object 
-            this.processor = processor;
-
+        public void getConfiguration()
+        {        
             //// print all configuration of PC
-            Console.WriteLine("PC Congiguration \nRam {0} ,HardDisk {1}, Processor {2}", ram, hardDisk, processor);     
+            Console.WriteLine("PC Congiguration \nRam : {0}\tHardDisk : {1},Processor : {2}", ram, hardDisk, processor);     
         }
     }
 
@@ -117,9 +109,9 @@ namespace DesignPattern
     /// </summary>
     public class Laptop : IComputer
     {
-        public string ram;
-        public string hardDisk;
-        public string processor;
+        public string ram = "8Gb";
+        public string hardDisk = "1Tb";
+        public string processor = "I5";
 
         /// <summary>
         /// this is abstract method declaration
@@ -127,19 +119,11 @@ namespace DesignPattern
         /// <param name="ram">take RAM</param>
         /// <param name="harddisk">take HardDisk</param>
         /// <param name="processor">take Processor</param>
-        public void getConfiguration(string ram, string hardDisk, string processor)
+        public void getConfiguration()
         {
-            //// set the ram to current object
-            this.ram = ram;
-
-            //// set hardDisk to Current Object
-            this.hardDisk = hardDisk;
-
-            //// set Processor to current object 
-            this.processor = processor;
-
+           
             //// print all configuration of Laptop
-            Console.WriteLine("Laptop Congiguration \nRam : {0} ,HardDisk : {1}, Processor : {2}", ram, hardDisk, processor);
+            Console.WriteLine("Laptop Congiguration \nRam : {0}\tHardDisk : {1}\tProcessor : {2}", ram, hardDisk, processor);
         }
     }
 
@@ -151,17 +135,17 @@ namespace DesignPattern
         /// <summary>
         /// it hold processor value of Server
         /// </summary>
-        public string processor;
+        public string processor = "Intel@ Xeon";
 
         /// <summary>
         /// it hold memory of processor
         /// </summary>
-        public string memory;
+        public string memory = "120Tb";
 
         /// <summary>
         /// It hold NIC card of Server
         /// </summary>
-        public string nic;
+        public string nic = "Dual";
 
         /// <summary>
         /// this method get the configuration of server
@@ -169,19 +153,10 @@ namespace DesignPattern
         /// <param name="processor">take processor value</param>
         /// <param name="memory">take memory</param>
         /// <param name="nic">take NIC</param>
-        public void getConfiguration(string processor, string memory, string nic)
+        public void getConfiguration()
         {
-            //// set processor value to current object
-            this.processor = processor;
-
-            //// set memory to current object
-            this.memory = memory;
-
-            //// set NIC to current object
-            this.nic = nic;
-
             //// print server  configuration
-            Console.WriteLine("Server Congiguration \nProcessor : {0} , Memory : {1}, Nic : {2}", processor, memory, nic);
+            Console.WriteLine("Server Congiguration \nProcessor : {0}\tMemory : {1}\tNic : {2}", processor, memory, nic);
         }
     }
 }
