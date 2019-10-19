@@ -1,12 +1,23 @@
-﻿
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="InjectionClient.cs" company="Bridgelabz">
+//   Copyright © 2019 Company
+// </copyright>
+// <creator name="Satish Dodake"/>
+// ------------------------------------------------------------------------------------------------------
 namespace DesignPattern
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
+    /// <summary>
+    /// this is injection class client
+    /// </summary>
     public class InjectionClient
     {
+        /// <summary>
+        /// this is client method performing operation
+        /// </summary>
         public static void InjectionOperation()
         {
             Permanent permanent = new Permanent();

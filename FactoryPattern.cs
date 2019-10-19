@@ -100,7 +100,7 @@ namespace DesignPattern
         public void getConfiguration()
         {        
             //// print all configuration of PC
-            Console.WriteLine("PC Congiguration \nRam : {0}\tHardDisk : {1},Processor : {2}", ram, hardDisk, processor);     
+            Console.WriteLine("PC Congiguration \nRam : {0}\tHardDisk : {1}\tProcessor : {2}", ram, hardDisk, processor);     
         }
     }
 

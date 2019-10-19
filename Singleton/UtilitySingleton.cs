@@ -21,55 +21,63 @@ namespace DesignPattern.Singleton
         /// </summary>
         public static void SingletonType()
         {
-            ////this variable take charecter type value from user
-            char again;
-
-            ////this do while loop use for repeating operation
-            do
+            try
             {
-                ////this is list of operation
-                Console.WriteLine("**********************************");
-                Console.WriteLine("1. SingleTon \n" + "2. Eager Singleton\n" + "3. Lazy Singleton\n"
-                     + "4. Singleton Without Sealed\n" + "5. Singleton Thread Safe\n");
-                Console.WriteLine("*********************************** ");
+                ////this variable take charecter type value from user
+                char again;
 
-                ////user enter his choice to perform operation
-                Console.WriteLine("Enter Your Choice To Run Operation ");
-                int choice = Convert.ToInt32(Console.ReadLine());
-
-                ////this switch execute the particular operation
-                switch (choice)
+                ////this do while loop use for repeating operation
+                do
                 {
-                    case 1:
-                        ////here perform simple singleton operation
-                        SingleTone();
-                        break;
-                    case 2:
-                        ////here perform Eager singleton operation
-                        EagerSingleton();
-                        break;
-                    case 3:
-                        ////here perform Lazy singleton operation
-                        LazySingleton();
-                        break;
-                    case 4:
-                        ////here perform Without Sealed singleton operation
-                        SingletonWithoutSealed();
-                        break;
-                    case 5:
-                        ////here perform singleton with thread safe operation
-                        SingleTonThreadSafe();
-                        break;
-                    default:
-                        Console.WriteLine("Please Enter Valide Number");
-                        break;
-                }
+                    ////this is list of operation
+                    Console.WriteLine("**********************************");
+                    Console.WriteLine("1. SingleTon \n" + "2. Eager Singleton\n" + "3. Lazy Singleton\n"
+                         + "4. Singleton Without Sealed\n" + "5. Singleton Thread Safe\n");
+                    Console.WriteLine("*********************************** ");
 
-                ////here ask to user for continue
-                Console.WriteLine("\nDo You want To Continue the Press 'Y' Or 'N' ");
-                again = Console.ReadLine()[0];
+                    ////user enter his choice to perform operation
+                    Console.WriteLine("Enter Your Choice To Run Operation ");
+                    int choice = Convert.ToInt32(Console.ReadLine());
+
+                    ////this switch execute the particular operation
+                    switch (choice)
+                    {
+                        case 1:
+                            ////here perform simple singleton operation
+                            SingleTone();
+                            break;
+                        case 2:
+                            ////here perform Eager singleton operation
+                            EagerSingleton();
+                            break;
+                        case 3:
+                            ////here perform Lazy singleton operation
+                            LazySingleton();
+                            break;
+                        case 4:
+                            ////here perform Without Sealed singleton operation
+                            SingletonWithoutSealed();
+                            break;
+                        case 5:
+                            ////here perform singleton with thread safe operation
+                            SingleTonThreadSafe();
+                            break;
+                        default:
+                            Console.WriteLine("Please Enter Valide Number");
+                            break;
+                    }
+
+                    ////here ask to user for continue
+                    Console.WriteLine("\nDo You want To Continue the Press 'Y' Or 'N' ");
+                    again = Console.ReadLine()[0];
+                }
+                while (again == 'Y' || again == 'y');
             }
-            while (again == 'Y' || again == 'y');
+            catch (FormatException e)
+            {
+                Console.WriteLine("Please Enter Valide Input");
+            }
+            
         }
 
         /// <summary>
