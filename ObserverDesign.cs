@@ -1,13 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ObserverDesign.cs" company="Bridgelabz">
+//   Copyright © 2019 Company
+// </copyright>
+// <creator name="Satish Dodake"/>
+// --------------------------------------------------------------------------------------------------------
 namespace DesignPattern
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// this is observe design class
+    /// </summary>
     public class ObserverDesign
     {
-
     }
+
    /* public interface Company
     {
         public double monthlyPf { get; set; }
@@ -56,5 +65,4 @@ namespace DesignPattern
         }
     }
     */
-
 }

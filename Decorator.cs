@@ -15,7 +15,7 @@ namespace DesignPattern
     }
 
     /// <summary>
-    /// this is abstract class it has abstract method whih print product details
+    /// this is abstract class it has abstract method which print product details
     /// </summary>
     public abstract class ILaptop
     {
@@ -30,7 +30,7 @@ namespace DesignPattern
         public double price { get; set; }
 
         /// <summary>
-        ///  setter getter for manufature year
+        ///  setter getter for manufacture year
         /// </summary>
         public int manufacturingYear { get; set; }
 

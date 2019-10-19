@@ -30,7 +30,7 @@ namespace DesignPattern.Singleton
             {
                 //// This Print List Of Operation on Console 
                 Console.WriteLine("**********************************");
-                Console.WriteLine("1. SingleTon \n");
+                Console.WriteLine("1. SingleTon \n" + "2. Factory Pattern\n");
                 Console.WriteLine("*********************************** ");
                 Console.WriteLine("Enter Your Choice To Run Operation ");
 
@@ -40,7 +40,14 @@ namespace DesignPattern.Singleton
                 {
                     case 1:
                         UtilitySingleton.SingletonType();
-                        break;               
+                        break;
+                    case 2:
+                        
+                      
+                        ConcreateFactory concreateFactory = new ConcreateFactory();
+                        IComputer computer = concreateFactory.getUserDecidedConfiguration("PC");
+                        computer.getConfiguration();
+                        break;
                     default:
                         Console.WriteLine("Please Enter Valide Number");
                         break;
