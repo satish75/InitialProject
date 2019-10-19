@@ -11,7 +11,8 @@ namespace DesignPattern
     using System.Text;
 
     /// <summary>
-    /// this is client class
+    /// this is client Factory class which has client reqiurment method that provide the choice to user 
+    /// to take a particular product at run time. 
     /// </summary>
     public class FactoryClient
     {

@@ -25,7 +25,7 @@ namespace DesignPattern
         /// <summary>
         /// it hold employee name
         /// </summary>
-        string employeeName { get; set; }
+       public string employeeName { get; set; }
        
         /// <summary>
         /// this is validation for employee name and give error
@@ -37,8 +37,6 @@ namespace DesignPattern
 
         //// employee name must start with capital letter 
         [RegularExpression(@"^[A-Z]{1}[a-z]{2,10}$")]
-
-        //// it set name and return name value
         public string EmployeeName
         {
             get
@@ -75,7 +73,8 @@ namespace DesignPattern
         /// </summary>
         public void GetDetails()
         {
-            Console.WriteLine("Name Of Emp " + this.employeeName);
+            Console.WriteLine("Your Name Is : " + this.employeeName);
+            Console.WriteLine(" Age : " + this.age);
         }
     }
 }

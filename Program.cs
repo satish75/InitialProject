@@ -30,7 +30,9 @@ namespace DesignPattern.Singleton
             {
                 //// This Print List Of Operation on Console 
                 Console.WriteLine("**********************************");
-                Console.WriteLine("1. SingleTon \n" + "2. Factory Pattern\n");
+                Console.WriteLine("1. SingleTon \n" + "2. Factory Pattern\n" + "3. Decorator Pattern\n" 
+                    + "4. Injection\n" + "5. Facade\n" + "6. Data Annotation\n" + "7. Prototype\n"
+                    + "8.\n");
                 Console.WriteLine("*********************************** ");
                 Console.WriteLine("Enter Your Choice To Run Operation ");
 
@@ -42,8 +44,22 @@ namespace DesignPattern.Singleton
                         UtilitySingleton.SingletonType();
                         break;
                     case 2:
-
                         FactoryClient.ClientRequirement();
+                        break;
+                    case 3:
+                        DecoratorUpdator.DecoratorUpdatorOperation();                     
+                        break;
+                    case 4:
+                        InjectionClient.InjectionOperation();
+                        break;
+                    case 5:
+                        FacadeCar.CompleteCarMade();
+                        break;
+                    case 6:
+                        Validation.DataAnnotation();                      
+                        break;
+                    case 7:
+                        Cloning.CloningOperation();
                         break;
                     default:
                         Console.WriteLine("Please Enter Valide Number");

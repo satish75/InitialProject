@@ -18,16 +18,31 @@ namespace DesignPattern
         /// <summary>
         /// this method takes all details about car 
         /// </summary>
-        public void CompleteCarMade()
+        public static void CompleteCarMade()
         {
             //// here create object of car
             CarName carName = new CarName();
 
             //// set value to car name
-            carName.carName = "Farary";
+
+            Console.WriteLine("Enter Car Name");
+            string name = Console.ReadLine();
+            carName.carName = name;
+
+            //// set  car engine object here
+            Console.WriteLine("Enter Car Engine");
+            string engineSet = Console.ReadLine();
+           
+
+            //// assign color as red
+            Console.WriteLine("Enter Color Of Car");
+            string color = Console.ReadLine();
+           
 
             ////set value to car model
-            carName.modelNumber = "488";
+            Console.WriteLine("Enter Car Model Number");
+            string model = Console.ReadLine();
+            carName.modelNumber = model;
 
             ////called the method
             carName.CarNameWithModel();
@@ -35,8 +50,7 @@ namespace DesignPattern
             //// create car color object
             CarColor carColor = new CarColor();
 
-            //// assign color as red
-            carColor.color = "Red";
+            carColor.color = color;
 
             //// create engine object
             CarEngine engine = new CarEngine();
@@ -46,9 +60,7 @@ namespace DesignPattern
 
             //// create car engine class
             CarEngine carEngineObject = new CarEngine();
-
-            //// set  car engine object here
-            carEngineObject.carEngine = "Ghibli";
+            carEngineObject.carEngine = engineSet;
 
             //// called gengine method here
             carEngineObject.getEngine();

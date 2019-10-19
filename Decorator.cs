@@ -90,27 +90,21 @@ namespace DesignPattern
         /// <summary>
         /// price increase variable
         /// </summary>
-       private double PriceIncrease { get; }
 
         /// <summary>
         /// getter used to  return the increasing price
         /// </summary>
-        public double PriceIncreaseVariable
-        {
-            get
-            {
-                return 3300;
-            }
-        }
-
+      
         /// <summary>
         /// This is Constructor
         /// </summary>
         /// <param name="valueObject"> take Laptop object as parameter</param>
         public ConcreateDecoratorHp(ILaptop valueObject) : base(valueObject)
         {
-            //// here update the price value
-            valueObject.price = valueObject.price + PriceIncreaseVariable;
+            Console.WriteLine("Enter Increase Price  ");
+            double priceIncrease = Convert.ToDouble(Console.ReadLine());
+        //// here update the price value
+        valueObject.price = valueObject.price + priceIncrease;
         }
         
         /// <summary>
