@@ -43,6 +43,7 @@ namespace DesignPattern.Singleton
                     switch (choice)
                     {
                         case 1:
+                            ////UtilitySingleton class called static method
                             UtilitySingleton.SingletonType();
                             break;
                         case 2:
