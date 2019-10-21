@@ -17,18 +17,20 @@ namespace DesignPattern
     {
     }
 
-   /* public interface Company
+    public interface CompanyDetails
     {
         public double monthlyPf { get; set; }
-       //// public string employeePosition { get; set; }
-      ////  public string workingHours { get; set; }
-        public void CurrentEmployee();
-        public void LeftEmployee(string employee);
-        public void Notify(); 
+
+        //// public string employeePosition { get; set; }
+        ////  public string workingHours { get; set; }
+        public abstract void CurrentEmp();
+     //   public void LeftEmployee(Company employee);
+       // public void Notify(); 
     }
-    public class Employee : Company
+    public class EmployeeDetails : CompanyDetails
     {
-       public List<Employee> listOfEmployee = new List<Employee>();
+       public List<EmployeeDetails> listOfEmployee = new List<EmployeeDetails>();
+        public string employeeName { get; set; }
         public double monthlyPf
         {
             get
@@ -40,23 +42,50 @@ namespace DesignPattern
                 monthlyPf = value;
             }
         }
-      
-        public void CurrentEmployee()
+        public string GetName
         {
-            listOfEmployee.Add();
-            listOfEmployee.Add("Shamu");
-            listOfEmployee.Add("Satya");
-            listOfEmployee.Add("Gajanan");  
-            foreach(List item in listOfEmployee )
+            get
             {
+                return employeeName;
+            }
+            set
+            {
+                employeeName = value;
+            }
+        }
 
+        public void CurrentEmp()
+        {
+            Console.WriteLine("EMP..........");
+          for(int i=0;i<5;i++)
+            {
+                listOfEmployee.Add(new EmployeeDetails());
+                Console.WriteLine("Enter Emp Name ");
+                string name = Console.ReadLine();
+                listOfEmployee[i].employeeName=name;
+            }
+            foreach(EmployeeDetails item in listOfEmployee )
+            {
+                Console.WriteLine("Emp " + item.employeeName);
             }
         }
 
      
-        public void LeftEmployee(string employee)
+        public void LeftEmployee(EmployeeDetails employee2)
         {
-            listOfEmployee.Remove(employee);
+            foreach (EmployeeDetails item in listOfEmployee)
+            {
+                if(item.employeeName==employee2.employeeName)
+                {
+                    listOfEmployee.Remove(employee2);
+                    Console.WriteLine("Deleted " + employee2.employeeName);
+                }
+            }
+            foreach (EmployeeDetails item2 in listOfEmployee)
+            {
+                Console.WriteLine("Emp " + item2.employeeName);
+            }
+
         }
 
         public void Notify()
@@ -64,5 +93,5 @@ namespace DesignPattern
 
         }
     }
-    */
+    
 }

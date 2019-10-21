@@ -77,6 +77,14 @@ namespace DesignPattern.Singleton
                             foreach (string item in product)
                                 Console.Write("    " + item);
                             break;
+                        case 11:
+                            EmployeeDetails emp = new EmployeeDetails();
+                            emp.CurrentEmp();
+                            EmployeeDetails emp2 = new EmployeeDetails();
+                            emp2.employeeName = "sat";
+                          
+                            emp.LeftEmployee(emp2);
+                            break;
                         default:
                             Console.WriteLine("Please Enter Valide Number");
                             break;
@@ -90,9 +98,10 @@ namespace DesignPattern.Singleton
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Please Enter Valide Input");
+                Console.WriteLine("Please Enter Valide Input "+e);
             }
-            
+           
+           
         }
     }
 }

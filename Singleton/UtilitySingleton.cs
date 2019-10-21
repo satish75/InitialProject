@@ -75,7 +75,7 @@ namespace DesignPattern.Singleton
             }
             catch (FormatException e)
             {
-                Console.WriteLine("Please Enter Valide Input");
+                Console.WriteLine("Please Enter Valide Input "+e);
             }
             
         }
@@ -174,7 +174,7 @@ namespace DesignPattern.Singleton
         public static void SingleTonThreadSafe()
         {
             ////This is Unaccessible because we aply lock and generate compile time error
-            ////SingletonThreadSafe singletonThreadSafe = new SingletonThreadSafe();
+           //// SingletonThreadSafe singletonThreadSafe1 = new SingletonThreadSafe();
          
             ////it hold singleton thread type object
             SingletonThreadSafe singletonThreadSafe = SingletonThreadSafe.GetSingleton;
