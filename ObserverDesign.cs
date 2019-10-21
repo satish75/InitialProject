@@ -17,14 +17,14 @@ namespace DesignPattern
     {
     }
 
-    public interface CompanyDetails
+   /* public interface CompanyDetails
     {
         public double monthlyPf { get; set; }
 
         //// public string employeePosition { get; set; }
         ////  public string workingHours { get; set; }
         public abstract void CurrentEmp();
-     //   public void LeftEmployee(Company employee);
+        public void LeftEmployee(CompanyDetails employee);
        // public void Notify(); 
     }
     public class EmployeeDetails : CompanyDetails
@@ -75,12 +75,13 @@ namespace DesignPattern
         {
             foreach (EmployeeDetails item in listOfEmployee)
             {
-                if(item.employeeName==employee2.employeeName)
+                if(item.employeeName.Equals(employee2.employeeName))
                 {
-                    listOfEmployee.Remove(employee2);
+                    listOfEmployee.RemoveAt(0);
                     Console.WriteLine("Deleted " + employee2.employeeName);
                 }
             }
+            Console.WriteLine("display");
             foreach (EmployeeDetails item2 in listOfEmployee)
             {
                 Console.WriteLine("Emp " + item2.employeeName);
@@ -92,6 +93,8 @@ namespace DesignPattern
         {
 
         }
-    }
+        */
     
 }
+    
+

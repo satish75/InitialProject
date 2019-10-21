@@ -78,12 +78,7 @@ namespace DesignPattern.Singleton
                                 Console.Write("    " + item);
                             break;
                         case 11:
-                            EmployeeDetails emp = new EmployeeDetails();
-                            emp.CurrentEmp();
-                            EmployeeDetails emp2 = new EmployeeDetails();
-                            emp2.employeeName = "sat";
-                          
-                            emp.LeftEmployee(emp2);
+                        
                             break;
                         default:
                             Console.WriteLine("Please Enter Valide Number");
