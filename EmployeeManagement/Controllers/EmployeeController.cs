@@ -25,10 +25,11 @@ namespace EmployeeManagement.Controllers
             return new string[] { "Value 1", "Value 2" };
         }
         [HttpPost]
-        public bool AddEmployee(EmployeeModel employeeModel )
+        public IActionResult AddEmployee(EmployeeModel employeeModel )
         {
-            var result = _employee.AddEmployee(employeeModel);
-            return result;
+            var response  =  _employee.AddEmployeeAsync(employeeModel);
+            return Ok(response);
+            
         }
     }
 }

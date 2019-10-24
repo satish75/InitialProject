@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace RepositoryLayer.InterfaceRepository
 {
    public interface IEmployeeRepository
     {
-        bool AddEmployee(EmployeeModel employeeModel);
+        Task<int> AddEmployeeAsync(EmployeeModel employeeModel);
         
 
         

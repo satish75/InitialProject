@@ -32,6 +32,7 @@ namespace EmployeeManagement
             services.AddControllers();
             services.AddTransient<IEmployee, EmployeeBussiness>();
             services.AddTransient<IEmployeeRepository, EmployeeOperation>();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
