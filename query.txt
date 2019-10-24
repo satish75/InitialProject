@@ -1,0 +1,31 @@
+create table Employee(EmplloyeeId int NOT NULL,EmployeeName varchar(40),EmployeeDesignation varchar,EmployeeSalary int,EmployeeAge int,EmployeeAddress varchar);
+
+
+INSERT INTO Employee(EmployeeId,Name,Designation,Salary,Age,Address) values(103,"Satya","Developer",20000,25,"Washim");
+
+
+use EmployeeDatabase;
+SELECT
+  *
+FROM
+  INFORMATION_SCHEMA.TABLES;
+
+create table employee(name varchar(50),age int);
+
+USE [EmployeeDatabase]
+GO
+
+INSERT INTO [dbo].[employee]
+           ([name]
+           ,[age])
+     VALUES
+           ('Rajesh',60)
+GO
+
+
+
+INSERT INTO dbo.employee (name ,age) VALUES ('eeeee',200)
+
+delete from dbo.employee where age=100; 
+
+update employee set name='dodake' where age=25;
