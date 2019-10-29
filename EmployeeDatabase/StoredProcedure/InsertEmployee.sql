@@ -8,6 +8,6 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	insert into Employee(Id,Name,Salary,Address) values(@id,@name,@salary,@address)
+	insert into Employees(Id,Name,Salary,Address) values(@id,@name,@salary,@address)
 END
 

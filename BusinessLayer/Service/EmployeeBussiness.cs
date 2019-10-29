@@ -55,5 +55,102 @@ namespace BusinessLayer.Service
                 throw new Exception(exception.Message);
             }
         }
+
+       public async Task<bool> UpdateEmployeeAsync(EmployeeModel employeeModel)
+        {
+            try
+            {
+                if (employeeModel != null)
+                {
+                    var response = await _employeeRepository.UpdateEmployeeAsync(employeeModel);
+                    if (response > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    throw new Exception(errorMessages.detailsNotFoundError);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+
+        /// <summary>
+        /// Deletes the employee asynchronous.
+        /// </summary>
+        /// <param name="employeeModel">The employee model.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">
+        /// </exception>
+        public async Task<bool> DeleteEmployeeAsync(EmployeeModel employeeModel)
+        {
+            try
+            {
+                if (employeeModel != null)
+                {
+                    var response = await _employeeRepository.DeleteEmployeeAsync(employeeModel);
+                    if (response > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    throw new Exception(errorMessages.detailsNotFoundError);
+                }
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+
+        /// <summary>
+        /// Gets the by identifier employee asynchronous.
+        /// </summary>
+        /// <param name="employeeModel">The employee model.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">
+        /// </exception>
+        public IList<EmployeeModel> GetByIdEmployeeAsync(int id)
+        {
+            try
+            {
+               
+                 var response =  this._employeeRepository.GetByIdEmployeeAsync(id);
+                 return response;
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+
+        public IList<EmployeeModel> GetAllEmployeeAsync()
+        {
+            try
+            {
+
+                var response = this._employeeRepository.GetAllEmployeeAsync();
+                return response;
+            }
+            catch (Exception exception)
+            {
+                throw new Exception(exception.Message);
+            }
+        }
+
     }
 }

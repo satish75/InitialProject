@@ -9,8 +9,9 @@ namespace RepositoryLayer.InterfaceRepository
    public interface IEmployeeRepository
     {
         Task<int> AddEmployeeAsync(EmployeeModel employeeModel);
-        
-
-        
+        Task<int> UpdateEmployeeAsync(EmployeeModel employeeModel);
+        Task<int> DeleteEmployeeAsync(EmployeeModel employeeModel);
+        IList<EmployeeModel> GetByIdEmployeeAsync(int id);
+        IList<EmployeeModel> GetAllEmployeeAsync();
     }
 }

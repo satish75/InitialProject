@@ -25,11 +25,44 @@ namespace EmployeeManagement.Controllers
             return new string[] { "Value 1", "Value 2" };
         }
         [HttpPost]
+        [Route("add")]
         public IActionResult AddEmployee(EmployeeModel employeeModel )
         {
             var response  =  _employee.AddEmployeeAsync(employeeModel);
             return Ok(response);
             
+        }
+        [HttpPost]
+        [Route("update")]
+        public IActionResult UpdateEmployee(EmployeeModel employeeModel)
+        {
+            var response = _employee.UpdateEmployeeAsync(employeeModel);
+            return Ok(response);
+
+        }
+
+        [HttpDelete]
+        [Route("delete")]
+        public IActionResult DeleteEmployee(EmployeeModel employeeModel)
+        {
+            var response = _employee.DeleteEmployeeAsync(employeeModel);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("get/{id}")]
+        public IActionResult GetEmployee(int id)
+        {
+            var response = _employee.GetByIdEmployeeAsync(id);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [Route("getAll")]
+        public IActionResult GetAllEmployee()
+        {
+            var response = _employee.GetAllEmployeeAsync();
+            return Ok(response);
         }
     }
 }
