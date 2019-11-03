@@ -1,0 +1,2 @@
+Task-is used to perform multiple task in parallel.
+async and await are use to performe the operation independentlty if one task get failed another task till executing.

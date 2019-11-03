@@ -1,0 +1,4 @@
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.SqlServer.Design
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Add-migration InitialCreate -o DatabaseLayer/Migrations

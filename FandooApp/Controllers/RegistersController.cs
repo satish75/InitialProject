@@ -66,7 +66,7 @@ namespace FandooApp.Controllers
                     return NotFound();
                 }
                 else
-                {
+                { 
                     throw;
                 }
             }
