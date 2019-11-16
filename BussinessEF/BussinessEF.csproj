@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonEF\CommonEF.csproj" />
+    <ProjectReference Include="..\RepositoryEF\RepositoryEF.csproj" />
+  </ItemGroup>
+
+</Project>
